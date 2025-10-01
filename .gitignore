@@ -1,0 +1,60 @@
+# C/C++ compiled files
+*.o
+*.obj
+*.a
+*.so
+*.lib
+*.exe
+*.out
+*.app
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Python virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build directories
+build/
+dist/
+*.egg-info/
+
+# Data files (can be large)
+*.dat
+*.csv
+*.data
+
+# Allow requirements.txt
+!requirements.txt
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Temporary files
+*.tmp
+*.temp

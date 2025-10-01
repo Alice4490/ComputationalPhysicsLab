@@ -4,6 +4,8 @@
 
 This repository contains a Jupyter notebook for C programming.
 
+**📖 For detailed setup instructions, see [QUICKSTART.md](QUICKSTART.md)**
+
 ### Setup Instructions
 
 1. **Install Jupyter Notebook**

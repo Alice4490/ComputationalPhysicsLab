@@ -36,8 +36,10 @@ dist/
 # Data files (can be large)
 *.dat
 *.csv
-*.txt
 *.data
+
+# Allow requirements.txt
+!requirements.txt
 
 # Jupyter Notebook
 .ipynb_checkpoints

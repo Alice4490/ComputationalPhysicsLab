@@ -1,0 +1,40 @@
+% ======= PREAMBOLO COMUNE =======
+% Codifica e lingua
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,italian]{babel}
+
+% Matematica e simboli
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{siunitx}
+\sisetup{separate-uncertainty, detect-all}
+
+% Grafica e tabelle
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption} % se ti servono sottofigure (facoltativo)
+
+% Layout e hyperlink
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+
+% Numerazione e stile
+\numberwithin{equation}{section}
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{0pt}
+
+% Header/footer puliti (opzionale)
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\leftmark}
+\rhead{\thepage}
+
+% Bibliografia (usa BibTeX se vuoi)
+% \usepackage[numbers]{natbib}   % o authoryear
+% \bibliographystyle{ieeetr}     % o abbrvnat/unsrt ecc.
+
+% Compilazione consigliata: pdflatex o latexmk
+% Se vuoi usare font di sistema (XeLaTeX/LuaLaTeX):
+% \usepackage{fontspec} \setmainfont{Latin Modern Roman}

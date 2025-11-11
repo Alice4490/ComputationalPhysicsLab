@@ -1,5 +1,55 @@
 \input{../../../latex/preamble.tex}
 \documentclass{article}
 \begin{document}
-Report for Chapter 1 – Error Analysis
+\section{Analisi degli errori}
+
+\subsection{Rappresentazione in aritmetica floating point}
+In aritmetica \textit{floating point}, ogni numero reale viene rappresentato da un numero macchina appartenente a un insieme finito e discreto \mathbb{F}, $\mathbb{R}$. Poiché non tutti i numeri reali sono rappresentabili, ciascun valore $x$ viene approssimato dal numero macchina più vicino $\mathrm{fl}(x)$, introducendo un errore di arrotondamento relativo limitato dall'\textit{epsilon macchina} $\varepsilon_{\text{mach}}$. Tale quantità rappresenta la distanza tra $1$ e il successivo numero rappresentabile, e definisce la precisione relativa con cui è possibile eseguire calcoli numerici. In generale, ogni operazione numerica può essere descritta come
+\[
+\mathrm{fl}(x) = x(1 + \varepsilon_x),
+\]
+con $|\varepsilon_x| \le \tfrac{1}{2}\varepsilon_{\text{mach}}$.
+
+\medskip
+Un numero reale $x$ è rappresentato come
+\[
+x = (-1)^s (1 + f) \times 2^b ,
+\]
+dove $s \in \{0,1\}$ è il bit di segno, $b$ è un intero chiamato \textit{esponente}, e $(1+f)$ è la cosiddetta \textit{mantissa}. In un sistema binario con $d$ cifre di mantissa e $n$ cifre di esponente, tali quantità sono rappresentate come:
+\[
+f = \sum_{i=1}^{d} b_i 2^{-i}, \qquad 
+b = \sum_{i=0}^{n-1} a_i 2^{i} - b_{\text{offset}},
+\]
+dove $b_i, a_i \in \{0,1\}$ e $b_{\text{offset}} = 2^{n-1}-1$ è un offset convenzionale per consentire esponenti positivi e negativi.
+
+\medskip
+
+Poiché $1+f$ appartiene all’intervallo $[1,2)$, ogni blocco di valori compreso tra due potenze di 2 successive, cioè $[2^m, 2^{m+1})$, contiene esattamente $2^d$ numeri macchina equispaziati. La distanza tra due numeri consecutivi in tale intervallo è quindi $2^{m-d}$. 
+
+\medskip
+
+Il più piccolo numero maggiore di $1$ rappresentabile in questo sistema è $1 + 2^{-d}$; di conseguenza, si definisce la \textit{precisione macchina} come
+\[
+\varepsilon_{\text{mach}} = 2^{-d}.
+\]
+Essa rappresenta la più piccola variazione relativa distinguibile tra due numeri rappresentabili e misura la precisione con cui un calcolatore può approssimare i numeri reali. 
+
+\subsection{Aritmetica Floating Point}
+In aritmetica floating point, ogni operazione è soggetta a un errore di arrotondamento dell’ordine dell’ε-macchina (εₘ).
+Calcolando la sommatoria 
+\begin{equation}
+    \sum \frac{1}{n^{2}}
+\end{equation}
+L'esercizio si pone verificare che l'addizione con numeri floating-point non è associativa calcol
+
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{%
+        \includegraphics[width=1.2\textwidth]{output.png}%
+    }
+    \vspace{-0.1em} % <-- regola qui: valori tipici -0.5em, -1em, -2em
+    \caption{Interpolazione, regime sottosmorzato}
+    \label{grafico_sottosmorzato}
+\end{figure}
+
 \end{document}

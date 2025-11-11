@@ -1,40 +1,37 @@
-% ======= PREAMBOLO COMUNE =======
-% Codifica e lingua
+\documentclass{article}
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[english,italian]{babel}
-
-% Matematica e simboli
-\usepackage{amsmath, amssymb, amsthm}
-\usepackage{siunitx}
-\sisetup{separate-uncertainty, detect-all}
-
-% Grafica e tabelle
+\usepackage[italian]{babel}
 \usepackage{graphicx}
-\usepackage{booktabs}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{footmisc}
+\usepackage{subcaption}
+\usepackage[abs]{overpic}
+\usepackage{tabularx}
+\usepackage{booktabs}  % per una tabella più elegante
+\usepackage{amsmath}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
 \usepackage{caption}
-\usepackage{subcaption} % se ti servono sottofigure (facoltativo)
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{siunitx} % Importante per \num e le unità
+\usepackage{bm} % Per il grassetto \bm{}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\makeatletter
+\renewcommand\@makefnmark{%
+  \hbox{\@textsuperscript{\color{red}\normalfont\@thefnmark}}}
+\makeatother
 
-% Layout e hyperlink
-\usepackage[a4paper,margin=2.5cm]{geometry}
-\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{physics}
+\usepackage{indentfirst}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[a4paper, margin=3cm]{geometry}
 
-% Numerazione e stile
-\numberwithin{equation}{section}
-\setlength{\parskip}{0.4em}
-\setlength{\parindent}{0pt}
-
-% Header/footer puliti (opzionale)
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\lhead{\leftmark}
-\rhead{\thepage}
-
-% Bibliografia (usa BibTeX se vuoi)
-% \usepackage[numbers]{natbib}   % o authoryear
-% \bibliographystyle{ieeetr}     % o abbrvnat/unsrt ecc.
-
-% Compilazione consigliata: pdflatex o latexmk
-% Se vuoi usare font di sistema (XeLaTeX/LuaLaTeX):
-% \usepackage{fontspec} \setmainfont{Latin Modern Roman}
